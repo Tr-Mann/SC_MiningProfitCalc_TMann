@@ -1,2 +1,3 @@
 ﻿  SC_MiningProfitCalc_TMann.cpp
+F:\Coding\C++_Projects\SC_MiningProfitCalc_TMann\SC_MiningProfitCalc_TMann\SC_MiningProfitCalc_TMann.cpp(41,6): warning C4101: 'input': unreferenced local variable
   SC_MiningProfitCalc_TMann.vcxproj -> F:\Coding\C++_Projects\SC_MiningProfitCalc_TMann\x64\Debug\SC_MiningProfitCalc_TMann.exe
