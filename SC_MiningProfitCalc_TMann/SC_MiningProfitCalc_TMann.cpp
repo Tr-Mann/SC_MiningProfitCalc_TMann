@@ -172,3 +172,60 @@ void rockToProf(mineral ore)
 		<< "Type 0 to return to main menu.";
 	cin >> input;
 }
+
+int loadProfit(mineral ores[])
+{
+	int input;
+	double scus;
+	int profit;
+	system("CLS");
+	cout << "What mineral are you adding?" << endl
+		<< "1. Quatanium" << endl
+		<< "2. Bexalite" << endl
+		<< "3. Gold" << endl
+		<< "4. Taranite" << endl
+		<< "5. Agricium" << endl
+		<< "6. Beryl" << endl
+		<< "7. Borase" << endl
+		<< "8. Hephestanite" << endl
+		<< "9. Laranite" << endl;
+	cin >> input;
+
+	while (input < 1 || input > 9)
+	{
+		cout << "Invalid input try again." << endl;
+		cin >> input;
+	}
+
+	switch (input)
+	{
+	case 1: cout << "How many SCUS of " << ores[0].name << " do you have.";
+		cin >> scus;
+		break;
+	case 2: cout << "How many SCUS of " << ores[1].name << " do you have.";
+		cin >> scus;
+		break;
+	case 3: cout << "How many SCUS of " << ores[2].name << " do you have.";
+		cin >> scus;
+		break;
+	case 4: cout << "How many SCUS of " << ores[3].name << " do you have.";
+		cin >> scus;
+		break;
+	case 5: cout << "How many SCUS of " << ores[4].name << " do you have.";
+		cin >> scus;
+		break;
+	case 6: cout << "How many SCUS of " << ores[5].name << " do you have.";
+		cin >> scus;
+		break;
+	case 7: cout << "How many SCUS of " << ores[6].name << " do you have.";
+		cin >> scus;
+		break;
+	case 8: cout << "How many SCUS of " << ores[7].name << " do you have.";
+		cin >> scus;
+		break;
+	case 9: cout << "How many SCUS of " << ores[8].name << " do you have.";
+		cin >> scus;
+		break;
+	}
+	
+}
