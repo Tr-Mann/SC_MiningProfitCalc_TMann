@@ -18,6 +18,8 @@ struct mineral
 
 void rockToProf(mineral);
 mineral getMin(mineral[]);
+double loadProfit(mineral[]);
+void minList(mineral[]);
 void mainMenu();
 bool runCheck();
 int validInput(int);
@@ -52,10 +54,12 @@ int main()
 		else if (input == 2)
 		{
 			//Load profit menu
+			loadProfit(ores);
 		}
 		else
 		{
 			//mineral list
+			minList(ores);
 		}
 	}
 }
@@ -173,59 +177,110 @@ void rockToProf(mineral ore)
 	cin >> input;
 }
 
-int loadProfit(mineral ores[])
+double loadProfit(mineral ores[])
 {
+	bool adding = true;
 	int input;
 	double scus;
-	int profit;
+	double profit = 0;
 	system("CLS");
-	cout << "What mineral are you adding?" << endl
-		<< "1. Quatanium" << endl
-		<< "2. Bexalite" << endl
-		<< "3. Gold" << endl
-		<< "4. Taranite" << endl
-		<< "5. Agricium" << endl
-		<< "6. Beryl" << endl
-		<< "7. Borase" << endl
-		<< "8. Hephestanite" << endl
-		<< "9. Laranite" << endl;
-	cin >> input;
-
-	while (input < 1 || input > 9)
+	while (adding = true)
 	{
-		cout << "Invalid input try again." << endl;
+		cout << "What mineral are you adding?" << endl
+			<< "1. Quatanium" << endl
+			<< "2. Bexalite" << endl
+			<< "3. Gold" << endl
+			<< "4. Taranite" << endl
+			<< "5. Agricium" << endl
+			<< "6. Beryl" << endl
+			<< "7. Borase" << endl
+			<< "8. Hephestanite" << endl
+			<< "9. Laranite" << endl;
 		cin >> input;
-	}
 
-	switch (input)
-	{
-	case 1: cout << "How many SCUS of " << ores[0].name << " do you have.";
-		cin >> scus;
-		break;
-	case 2: cout << "How many SCUS of " << ores[1].name << " do you have.";
-		cin >> scus;
-		break;
-	case 3: cout << "How many SCUS of " << ores[2].name << " do you have.";
-		cin >> scus;
-		break;
-	case 4: cout << "How many SCUS of " << ores[3].name << " do you have.";
-		cin >> scus;
-		break;
-	case 5: cout << "How many SCUS of " << ores[4].name << " do you have.";
-		cin >> scus;
-		break;
-	case 6: cout << "How many SCUS of " << ores[5].name << " do you have.";
-		cin >> scus;
-		break;
-	case 7: cout << "How many SCUS of " << ores[6].name << " do you have.";
-		cin >> scus;
-		break;
-	case 8: cout << "How many SCUS of " << ores[7].name << " do you have.";
-		cin >> scus;
-		break;
-	case 9: cout << "How many SCUS of " << ores[8].name << " do you have.";
-		cin >> scus;
-		break;
+		while (input < 1 || input > 9)
+		{
+			cout << "Invalid input try again." << endl;
+			cin >> input;
+		}
+		switch (input)
+		{
+		case 1: cout << "How many SCUS of " << ores[0].name << " do you have. ";
+			cin >> scus;
+			profit += ores[0].value * scus;
+			break;
+		case 2: cout << "How many SCUS of " << ores[1].name << " do you have. ";
+			cin >> scus;
+			profit += ores[1].value * scus;
+			break;
+		case 3: cout << "How many SCUS of " << ores[2].name << " do you have. ";
+			cin >> scus;
+			profit += ores[2].value * scus;
+			break;
+		case 4: cout << "How many SCUS of " << ores[3].name << " do you have. ";
+			cin >> scus;
+			profit += ores[3].value * scus;
+			break;
+		case 5: cout << "How many SCUS of " << ores[4].name << " do you have. ";
+			cin >> scus;
+			profit += ores[4].value * scus;
+			break;
+		case 6: cout << "How many SCUS of " << ores[5].name << " do you have. ";
+			cin >> scus;
+			profit += ores[5].value * scus;
+			break;
+		case 7: cout << "How many SCUS of " << ores[6].name << " do you have. ";
+			cin >> scus;
+			profit += ores[6].value * scus;
+			break;
+		case 8: cout << "How many SCUS of " << ores[7].name << " do you have. ";
+			cin >> scus;
+			profit += ores[7].value * scus;
+			break;
+		case 9: cout << "How many SCUS of " << ores[8].name << " do you have. ";
+			cin >> scus;
+			profit += ores[8].value * scus;
+			break;
+		}
+
+		cout << "Add another mineral? (0: no/1: yes)" << endl;
+		cin >> input;
+
+		while (input < 0 || input > 1)
+		{
+			cout << "Invalid input try again (0: no/1: yes)" << endl;
+			cin >> input;
+		}
+
+		if (input == 0)
+		{
+			cout << "Total load profits: " << profit << " type 0 to return to main menu." << endl;
+			cin >> input;
+			adding = false;
+			return profit;
+		}
+		else 
+		{
+			cout << "Adding next mineral." << endl;
+		}
 	}
-	
+}
+
+void minList(mineral ores[])
+{
+	short int input;
+
+	system("CLS");
+	cout << "Mineral List: " << endl
+		<< setw(12) << ores[0].name << "| price " << setw(7) << ores[0].value << "| mass to scu " << setw(4) << ores[0].massToScu << endl
+		<< setw(12) << ores[1].name << "| price " << setw(7) << ores[1].value << "| mass to scu " << setw(4) << ores[1].massToScu << endl
+		<< setw(12) << ores[2].name << "| price " << setw(7) << ores[2].value << "| mass to scu " << setw(4) << ores[2].massToScu << endl
+		<< setw(12) << ores[3].name << "| price " << setw(7) << ores[3].value << "| mass to scu " << setw(4) << ores[3].massToScu << endl
+		<< setw(12) << ores[4].name << "| price " << setw(7) << ores[4].value << "| mass to scu " << setw(4) << ores[4].massToScu << endl
+		<< setw(12) << ores[5].name << "| price " << setw(7) << ores[5].value << "| mass to scu " << setw(4) << ores[5].massToScu << endl
+		<< setw(12) << ores[6].name << "| price " << setw(7) << ores[6].value << "| mass to scu " << setw(4) << ores[6].massToScu << endl
+		<< setw(12) << ores[7].name << "| price " << setw(7) << ores[7].value << "| mass to scu " << setw(4) << ores[7].massToScu << endl
+		<< setw(12) << ores[8].name << "| price " << setw(7) << ores[8].value << "| mass to scu " << setw(4) << ores[8].massToScu << endl;
+	cout << "Type 0 to return to main menu: " << endl;
+	cin >> input;
 }

@@ -1,3 +1,4 @@
 ﻿  SC_MiningProfitCalc_TMann.cpp
-F:\Coding\C++_Projects\SC_MiningProfitCalc_TMann\SC_MiningProfitCalc_TMann\SC_MiningProfitCalc_TMann.cpp(153): warning C4715: 'getMin': not all control paths return a value
+F:\Coding\C++_Projects\SC_MiningProfitCalc_TMann\SC_MiningProfitCalc_TMann\SC_MiningProfitCalc_TMann.cpp(156): warning C4715: 'getMin': not all control paths return a value
+F:\Coding\C++_Projects\SC_MiningProfitCalc_TMann\SC_MiningProfitCalc_TMann\SC_MiningProfitCalc_TMann.cpp(267): warning C4715: 'loadProfit': not all control paths return a value
   SC_MiningProfitCalc_TMann.vcxproj -> F:\Coding\C++_Projects\SC_MiningProfitCalc_TMann\x64\Debug\SC_MiningProfitCalc_TMann.exe
